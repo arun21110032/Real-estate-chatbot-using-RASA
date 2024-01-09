@@ -1,0 +1,76 @@
+version: "3.1"
+
+stories:
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_iamabot
+  - intent: buy_prop
+  - action: details_form
+  - active_loop: details_form
+  - slot_was_set:
+    - requested_slot: GPE
+  - intent: info
+    entities:
+    - GPE: Chennai
+  - slot_was_set:
+    - GPE: Chennai
+  - action: details_form
+  - slot_was_set:
+    - GPE: Chennai
+  - slot_was_set:
+    - requested_slot: proptype
+  - intent: info
+    entities:
+    - proptype: commercial
+  - slot_was_set:
+    - proptype: commercial
+  - action: details_form
+  - slot_was_set:
+    - proptype: commercial
+  - slot_was_set:
+    - requested_slot: cost
+  - intent: info
+    entities:
+    - cost: 2 crores
+  - slot_was_set:
+    - cost: 2 crores
+  - action: details_form
+  - slot_was_set:
+    - cost: 2 crores
+  - slot_was_set:
+    - requested_slot: amenity
+  - intent: info
+    entities:
+    - amenity: swimming pool
+  - slot_was_set:
+    - amenity: swimming pool
+  - action: details_form
+  - slot_was_set:
+    - amenity: swimming pool
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_detail_slots
+
+
+
+- story: interactive_story_2
+  steps:
+  - intent: faq_rental_agreement4
+  - action: utter_faq_rental_agreement4
+  - intent: faq_rental_agreement1
+  - action: utter_faq_rental_agreement1
+  - intent: faq_rental_agreement2
+  - action: utter_faq_rental_agreement2
+  - intent: faq_rental_agreement3
+  - action: utter_faq_rental_agreement3
+  - intent: faq_rental_agreement5
+  - action: utter_faq_rental_agreement5
+
+
+
+
+

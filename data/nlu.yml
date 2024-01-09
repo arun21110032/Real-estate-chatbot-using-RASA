@@ -1,0 +1,146 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - good afternoon
+    - hii
+    - hey bot
+    - hi hello
+    - hey hi
+- intent: goodbye
+  examples: |
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - thank you good bye
+    - ok bye
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: buy_prop
+  examples: |
+    - i want to buy a property
+    - i'd like to get a plot
+    - can i buy a property?
+    - I want to buy a property
+    - can you help me buying a plot
+- intent: info
+  examples: |
+    - can you show me property in [Delhi](GPE)
+    - give me properties in [Hyderabad](GPE)
+    - in [Dubai](GPE)
+    - city is [Delhi](GPE)
+    - it is [residential](proptype)
+    - it is a [plot](proptype)
+    - Show me [residential](proptype) properties
+    - under [25 lakhs](cost)
+    - around [30 lakhs](cost)
+    - show me properties less than [18 lakhs](cost)
+    - Give me [commercial](proptype) property in [Hyderabad](GPE) under [18 lakhs](cost)
+    - can you show me [commercial](proptype) properties under [1.4 crores](cost) in [Mumbai](GPE)
+    - in [Chennai](GPE)
+    - In [Delhi](GPE)
+    - [residential](proptype)
+    - [60 lakhs](cost)
+    - It must have [swimming pool](amenity)
+    - Property should have [Terrace Garden,Banquet Hall,CCTV Camera Security,Lift](amenity)
+    - [car parking](amenity) should be available
+    - [Gym,Power Backup,Rain Water Harvesting](amenity) facilites must be there
+    - in [Delhi](GPE)
+    - around [1 crore](cost)
+    - [commercial](proptype)
+    - My budget is under [2 crores](cost)
+
+- intent: faq_rental_agreement1
+  examples: |
+    - Is an online Rental Agreement valid or legal?
+    - is an online rental agreement valid?
+- intent: faq_rental_agreement2
+  examples: |
+    - How much stamp duty should I pay on my rental agreement?
+    - how much stamp should one pay on rental agreement?
+- intent: faq_rental_agreement3
+  examples: |
+    - What are the important points to validate in a rental agreement?
+    - tell the important points to validate in rental agreement
+- intent: faq_tenant_agreement1
+  examples: |
+    - What are the types of tenancy agreements in India?
+    - list the types of tenancy agreements in India
+- intent: faq_rental_agreement4
+  examples: |
+    - What is a Rental Agreement?
+    - What is a rental agreement??
+- intent: faq_rental_agreement5
+  examples: |
+    - I am yet to find a tenant for my property, why should I pre-purchase the Rental Agreement Service?
+    - why should I pre-purshace rental agreement service
+- intent: out_of_scope
+  examples: |
+    - I want to hack your systems
+    - What is 2 + 2?
+    - Who's the US President?
+- intent: provide_feedback
+  examples: |
+    - [It was really helpful to have an assistant](feedback)
+    - [you could have improved the chatting part](feedback)
+    - [Maybe could have improved the bot overall](feedback)
+    - [it helped me a lot and made things easier thanks to you](feedback)
+- intent: request_appointment
+  examples: |
+    - I want to schedule an appointment
+    - Can I book an appointment?
+    - Schedule a meeting
+    - make an appointment with agent
+    - can you arrange a meeting with agent?
+    - Can you make an appointment?
+- intent: appoint_info
+  examples: |
+    - My email is [abfed123@gmail.com](email)
+    - Here is my email: [smartdyar973@yahoo.com](email)
+    - [coolrai22@gmail.com](email)
+    - [joebiden56@gmail.com](email)
+    - it is [yashjha28@gmail.com](email)
+    - my name is [David Derz](PERSON)
+    - My name is [Mark antony](PERSON)
+    - I'm [Saif khan] (PERSON)
+    - myself [George Santino](PERSON)
+    - [Divya](PERSON)
+    - It is [Shri jha](PERSON)
+    - my name is [Arun karthik](PERSON)
+    - it is [8795500057](usrphone)
+    - my mobile number is [7087043219](usrphone)
+    - my phone number is [8087041023](usrphone)
+    - [7788944556](usrphone)
+    - [larrygod74@gmail.com](email)
+    - it is [Rajkumar](PERSON)
+    - [9894275800](usrphone)
+    - [9894275700](usrphone)

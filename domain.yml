@@ -1,0 +1,169 @@
+version: '3.1'
+intents:
+- affirm
+- appoint_info
+- buy_prop
+- deny
+- faq_rental_agreement1
+- faq_rental_agreement2
+- faq_rental_agreement3
+- faq_rental_agreement4
+- faq_rental_agreement5
+- faq_tenat_agreement1
+- getname
+- goodbye
+- greet
+- info
+- provide_feedback
+- request_appointment
+entities:
+- email
+- PERSON
+- usrphone
+- cost
+- proptype
+- GPE
+- amenity
+- feedback
+slots:
+  GPE:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: GPE
+  proptype:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: proptype
+  cost:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: cost
+  amenity:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: amenity
+  PERSON:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: PERSON
+  usrphone:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: usrphone
+  email:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: email
+  feedback:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: feedback
+forms:
+  details_form:
+    required_slots:
+    - GPE
+    - proptype
+    - cost
+    - amenity
+  appointment_form:
+    required_slots:
+    - email
+    - PERSON
+    - usrphone
+responses:
+  utter_ask_GPE:
+  - text: In which location would you like to buy?
+  utter_ask_proptype:
+  - text: What's the type of Property you need? [residential,commericial or plot]
+  utter_ask_cost:
+  - text: Your budget ,please?
+  utter_ask_amenity:
+  - text: Are you looking for properties with any specific features?
+  utter_out_of_scope:
+  - text: Sorry, I can't handle that request.Could you rephrase it, please?
+  utter_greet:
+  - text: Hey! hi
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_submit:
+  - text: Great, Here you goo!
+  utter_feedback:
+  - text: Before going can you give us a feedback about me?
+  utter_goodbye:
+  - text: Thank you ,Bye
+  utter_ask_appointment:
+  - text: Do you want an appointment with our agent?
+  utter_fix_appointment:
+  - text: Sure,we have scheduled your meeting with the real estate agent, soon they will contact you!
+  utter_iamabot:
+  - text: Hello!! I am Property Assistant, How may I help you?
+  utter_detail_slots:
+  - text: Showing you {proptype} properties in {GPE} with budget of {cost} and with features:{amenity}.
+  utter_faq_rental_agreement1:
+  - text: Online rental agreements that are executed on E-stamp paper and signed by both the parties, are legally valid documents.
+  utter_faq_rental_agreement2:
+  - text: The online rent agreement is drafted on E-stamp paper having denomination value of Rs 100. However, you can choose higher denomination amount as well in the multiples of 100.
+  utter_faq_rental_agreement3:
+  - text: Being an informed tenant or landlord, you must include/check these details:Full details of parties involved in the agreement.Amount details of monthly rent along with security deposit and maintenance charges(if any).Landlord's right to enter the property.Permission for pets.Evacuation of tenant in case of disruptive behavior and illegal activities.Terms of tenancy.Clauses for renewal of agreement.Penalty if the rent gets delayed, etc.
+  utter_faq_rental_agreement4:
+  - text: A rental agreement is a legal document that binds the owner of a property and tenant, while safeguarding the interest of both the parties. The landlord cited in the agreement should either be the owner of the property or a person having the power of attorney from the owner.
+  utter_faq_tenant_agreement1:
+  - text: There are two types of tenancy agreements in India = Lease Agreement- A Lease Agreement is governed by restrictive rent control laws, wherein the amount of rent that can be charged is based on a formula devised by the local executive, legislative or judiciary, as the case maybe. The Lease Agreement transfers the right of ownership to the tenant for a stipulated period of time. Lease agreements and the Rent Control laws usually come into play when the lease period is at least 12 months.Leave and License Agreement- Leave and License Agreement only grants the tenant a license to occupy the property for a period of 11 months, with an option for periodic renewal. This agreement usually don't come under the purview of Rent Control laws. However, the above usage of terms is loosely held and can vary from state to state.The term 'Rent agreement' is usually used in the context of either of the above.
+  utter_faq_rental_agreement5:
+  - text: The validity of the Rental Agreement Service is 12 Months. You can utilize the service as soon as you get a suitable tenant.
+  utter_ask_PERSON:
+  - text: May I know your name ,please?
+  utter_ask_usrphone:
+  - text: Could you please provide your mobile number?
+  utter_ask_email:
+  - text: Can you provide your email to contact you?
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- utter_fix_appointment
+- utter_ask_email
+- utter_ask_usrphone
+- utter_ask_PERSON
+- utter_faq_rental_agreement5
+- utter_faq_rental_agreement3
+- utter_faq_rental_agreement4
+- utter_faq_rental_agreement1
+- utter_faq_rental_agreement2
+- utter_submit
+- utter_iamabot
+- utter_goodbye
+- utter_detail_slots
+- utter_ask_amenity
+- utter_ask_GPE
+- utter_ask_price
+- utter_ask_proptype
+- utter_faq_tenant_agreement1
+- utter_ask_appointment
+- utter_feedback
+- utter_out_of_scope
+- utter_greet
+- action_display_details
+- action_greet
+- action_acknowledge_feedback
+- validate_appoint_form
+- validate_details_form

@@ -1,0 +1,91 @@
+version: "3.1"
+
+rules:
+
+- rule: Say iamabot at the start
+  steps:
+  - intent: greet
+  - action: utter_iamabot
+
+- rule: activate form loop
+  steps:
+  - intent: buy_prop
+  - action: details_form
+  - active_loop: details_form
+
+- rule:  submit_form
+  condition:
+  - active_loop: details_form
+  steps:
+  - action: details_form
+  - active_loop:  null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  - action: utter_detail_slots
+
+  
+  
+- rule: faq for rental agreement1
+  steps:
+  - intent: faq_rental_agreement1
+  - action: utter_faq_rental_agreement1
+
+- rule: faq for rental agreement2
+  steps:
+  - intent: faq_rental_agreement2
+  - action: utter_faq_rental_agreement2
+
+- rule: faq for rental agreement3
+  steps:
+  - intent: faq_rental_agreement3
+  - action: utter_faq_rental_agreement3
+
+- rule: faq for rental agreement4
+  steps:
+  - intent: faq_rental_agreement4
+  - action: utter_faq_rental_agreement4
+
+- rule: faq for rental agreement5
+  steps:
+  - intent: faq_rental_agreement5
+  - action: utter_faq_rental_agreement5
+
+- rule: faq for tenant agreement1
+  steps:
+  - intent: faq_tenant_agreement1
+  - action: utter_faq_tenant_agreement1
+
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_out_of_scope
+
+
+
+- rule: ask user for feedback
+  steps:
+  - intent: goodbye
+  - action: utter_feedback
+
+- rule: User provides feedback
+  steps:
+  - intent: provide_feedback
+  - action: action_acknowledge_feedback
+
+
+- rule: activate appoint form loop
+  steps:
+  - intent: request_appointment
+  - action: appointment_form
+  - active_loop: appointment_form
+
+- rule:  submit appoint form
+  condition:
+  - active_loop: appointment_form
+  steps:
+  - action: appointment_form
+  - active_loop:  null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_fix_appointment
